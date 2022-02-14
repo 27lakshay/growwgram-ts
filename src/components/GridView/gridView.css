@@ -1,0 +1,38 @@
+.gv19Wrapper {
+    width: 80vw;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+}
+.gv19gridView {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    margin: 1.5rem !important;
+    /* width: 80vw; */
+}
+
+.gv19Post {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 640px) {
+    .gv19gridView {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(50px, auto);
+    }
+}
+
+@media (min-width: 1200px) {
+    .gv19gridView {
+        width: 80vw;
+        padding: 0;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(50px, auto);
+    }
+}

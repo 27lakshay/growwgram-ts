@@ -1,0 +1,8 @@
+.nfp19Wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--gg-primary);
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+}

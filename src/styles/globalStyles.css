@@ -1,0 +1,35 @@
+html,
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --gg-off-white: #dbdbdb;
+    --gg-grey-light: #a9a9a9;
+    --gg-grey-dark: #3a404e;
+    --gg-grey-darkest: #404042;
+
+    --gg-primary: #0B132B;
+    --gg-primary-light: #1C2541;
+    --gg-primary-lightest: #3A506B;
+    --gg-border-radius: 8px;
+    --gg-button-hover: #3A506B;
+    --gg-text: #E8EDDF;
+    --gg-text-hover: #fff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    color: var(--gg-text);
+    /* outline: 1px solid red; */
+}
+
+a:hover,
+i:hover {
+    color: var(--gg-text-hover);
+}

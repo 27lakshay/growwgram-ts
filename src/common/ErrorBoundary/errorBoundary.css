@@ -1,8 +1,8 @@
-.hp19Wrapper {
+.eb19Wrapper {
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
     background-color: var(--gg-primary);
-    gap: 2rem;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
 }

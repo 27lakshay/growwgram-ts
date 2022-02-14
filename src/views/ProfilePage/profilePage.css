@@ -1,0 +1,70 @@
+.pp19Wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--gg-primary);
+}
+
+.pp19photosWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.tb19tabsButton.sticky {
+    z-index: 20;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--gg-primary-light);
+}
+.tb19tabsButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 3rem;
+    transition: all 0.3s ease;
+}
+.tb19tabBtn {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gg-text);
+    transition: color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    padding: 0.5rem;
+    border-radius: var(--gg-border-radius);
+}
+
+.tb19tabBtn:hover {
+    background-color: var(--gg-primary-light);
+}
+
+.tb19tabBtn.active-tab {
+    background-color: var(--gg-primary-light);
+    color: var(--gg-text);
+}
+
+.tb19tabBtn.active-tab::after {
+    content: "";
+    height: 10px;
+    width: 10px;
+    background-color: var(--gg-primary-lightest);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 640px) {
+    .tb19tabsButton {
+        padding: 1rem;
+    }
+}

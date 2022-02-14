@@ -1,0 +1,51 @@
+.su19Wrapper {
+    margin: 2rem 1rem;
+    background-color: var(--gg-primary-light);
+    border-radius: var(--gg-border-radius);
+    height: fit-content;
+    padding: 1rem;
+    min-width: 300px;
+}
+
+.su19List {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.su19listItem {
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: var(--gg-border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.su19listItem:hover {
+    background-color: var(--gg-primary-lightest);
+}
+
+.su19Image {
+    border-radius: 50%;
+}
+
+.su19Name {
+    color: var(--gg-off-white);
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.su19userName {
+    color: var(--gg-grey-light);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 992px) {
+    .su19Wrapper {
+        display: none;
+    }
+}

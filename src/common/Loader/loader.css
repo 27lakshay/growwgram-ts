@@ -1,0 +1,83 @@
+.ld19Post {
+    background-color: var(--gg-primary-light);
+    border-radius: var(--gg-border-radius);
+    padding: 1rem;
+    width: 500px;
+    height: 600px;
+}
+
+.ld19Post .image {
+    height: 100%;
+    width: 100%;
+}
+
+.ld19userDetails {
+    width: 80%;
+    background-color: var(--gg-primary-light);
+    border-radius: var(--gg-border-radius);
+    padding: 1rem;
+}
+
+.ld19Image .image {
+    height: 200px;
+    width: 100%;
+}
+.ld19Image.card {
+    margin: 0;
+}
+@media (max-width: 640px) {
+    .ld19Post {
+        width: 100%;
+    }
+    .ld19userDetails {
+        width: 100%;
+    }
+}
+
+.br {
+    border-radius: 8px;
+}
+.w80 {
+    width: 100%;
+}
+.card {
+    margin: 1rem;
+    /* cursor: auto; */
+}
+.wrapper {
+    width: 0px;
+    animation: fullView 0.5s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    height: 70%;
+}
+.profilePic {
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+}
+.comment {
+    height: 10px;
+    background: #777;
+    margin-top: 20px;
+}
+
+@keyframes fullView {
+    100% {
+        width: 100%;
+    }
+}
+
+.animate {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(to right, var(--gg-off-white) 4%, var(--gg-grey-light) 25%, var(--gg-off-white) 36%);
+    background-size: 1000px 100%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}

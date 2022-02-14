@@ -1,0 +1,52 @@
+.pp19userDetailsWrapper {
+    display: grid;
+    background-color: var(--gg-primary-light);
+    margin-top: 2rem;
+    border-radius: var(--gg-border-radius);
+    grid-template-columns: 20% 80%;
+    padding: 1rem;
+    width: 80vw;
+}
+
+.pp19userImageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pp19userImage {
+    border-radius: 50%;
+}
+
+.pp19userDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pp19userFullName {
+    font-size: 1.5rem;
+    /* margin-bottom: 0.5rem; */
+}
+
+.pp19Username {
+    color: var(--gg-grey-light);
+}
+.pp19Bio {
+    margin: 1rem 0;
+}
+
+.pp19Stats {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 640px) {
+    .pp19userDetailsWrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 0;
+    }
+}

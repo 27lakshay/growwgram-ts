@@ -1,0 +1,51 @@
+.nb19Wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: var(--gg-primary-light);
+}
+.nb19Brand button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: var(--gg-text);
+    transition: color 0.3s ease;
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.nb19Brand:hover button {
+    color: var(--gg-text-hover);
+}
+
+.nb19Options {
+    display: flex;
+    gap: 2rem;
+}
+
+.nb19Option {
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+@media (max-width: 640px) {
+    .nb19Wrapper {
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    .nb19Brand button {
+        font-size: 1.5rem;
+    }
+    .nb19Option:nth-child(1),
+    .nb19Option:nth-child(2) {
+        display: none;
+    }
+    
+}
+

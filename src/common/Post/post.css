@@ -1,0 +1,89 @@
+.p19Wrapper {
+    width: 600px;
+    height: 100%;
+    background-color: var(--gg-primary-light);
+    margin-bottom: 2rem;
+    border-radius: var(--gg-border-radius);
+    transition: all 0.3s ease-in;
+}
+
+.p19Head {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.p19Head i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.p19Head a {
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.p19Body {
+    height: 100%;
+    display: flex;
+}
+.p19Picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.p19Description {
+    word-break: break-all;
+}
+
+.p19Footer {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.grid-enabled .p19Head,
+.grid-enabled .p19Footer {
+    display: none;
+}
+
+.p19Options {
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-start; */
+    gap: 1rem;
+    width: 100%;
+}
+.p19Options .p19Option:first-child {
+    margin-right: auto;
+}
+.p19Option {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 24px;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+}
+
+.p19Option span {
+    font-size: 20px;
+}
+
+@media (max-width: 640px) {
+    .p19Wrapper {
+        width: 100%;
+        border-radius: 0;
+    }
+    .p19Head,
+    .p19Footer {
+        padding: 0.5rem;
+    }
+}

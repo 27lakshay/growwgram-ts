@@ -1,55 +1,26 @@
 {
-    "extends": "@groww-tech/tsconfig",
-    "compilerOptions": {
-      "target": "esnext", // Specify ECMAScript target version
-      "lib": [
-        "dom",
-        "dom.iterable",
-        "esnext"
-      ], // List of library files to be included in the compilation
-      "typeRoots": [
-        "node_modules/@types",
-      ],
-      "allowJs": true, // Allow JavaScript files to be compiled
-      "checkJs": false, // Report errors in .js files.
-      "noEmit": true, // TS Compiler will not emit JS files
-      "baseUrl": "src",
-      "paths": {
-        "common/*": [
-          "common/*"
-        ],
-        "ui/*": [
-          "ui/*"
-        ],
-        "config/*": [
-          "config/*"
-        ],
-        "store/*": [
-          "store/*"
-        ],
-        "utils/*": [
-          "utils/*"
-        ],
-        "routes": [
-          "routes.js"
-        ],
-        "router/*": [
-          "router/*"
-        ],
-        "views/*": [
-          "views/*"
-        ],
-        "styles/*": [
-          "styles/*"
-        ]
-      }
-    },
-    "include": [
-      "src/**/*" // *** The files TypeScript should type check ***
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
     ],
-    "exclude": [
-      "node_modules",
-      "build"
-    ], // *** The files to not type check ***
-  }
-  
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src"
+  ]
+}
