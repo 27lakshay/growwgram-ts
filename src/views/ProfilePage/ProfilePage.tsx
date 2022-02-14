@@ -31,6 +31,8 @@ export default function ProfilePage() {
     //     changeTab(1);
     // }
 
+    
+
     useEffect(() => {
         if (params.username) dispatch(getUserDetails(params.username));
         if (params.username) hydrateFeed(params.username);
