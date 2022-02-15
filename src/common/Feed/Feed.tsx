@@ -2,21 +2,26 @@ import { useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import "./feed.css";
-import Post from "../Post/Post";
+import { PostCard } from "../PostCard";
 import Loader from "../Loader/Loader";
+import { Post } from "../../store/types";
 
-export default function Feed(props: any) {
-    const { data, getMoreData, scrollToPost, loading, hydrateFeed } = props;
+type Props = {
+    data: Post[];
+    hydrateFeed: any;
+};
+export default function Feed(props: Props) {
+    const { data, hydrateFeed } = props;
 
     useEffect(() => {
-        if (scrollToPost) {
-            let el = document.getElementById(scrollToPost);
-            el &&
-                el.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                });
-        }
+        // if (scrollToPost) {
+        //     let el = document.getElementById(scrollToPost);
+        //     el &&
+        //         el.scrollIntoView({
+        //             behavior: "smooth",
+        //             block: "start",
+        //         });
+        // }
     }, []);
 
     return (
@@ -33,7 +38,7 @@ export default function Feed(props: any) {
                 className={"f19listView"}
             >
                 {data.map((item: any, index: number) => (
-                    <Post key={index} data={item} />
+                    <PostCard index={index} data={item} />
                 ))}
             </InfiniteScroll>
             {/* )} */}

@@ -1,43 +1,43 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useAppDispatch, useAppSelector } from "../../store";
 import { useParams } from "react-router-dom";
 
 import "./profilePage.css";
-import { getUserDetails, getUserPhotos } from "../../store/user/actions";
-import Feed from "../../common/Feed/Feed";
-import UserDetails from "../../components/UserDetails/UserDetails";
-import GridView from "../../components/GridView/GridView";
-import Loader from "../../common/Loader/Loader";
+import { getUserDetails, getUserPhotos, resetUser } from "../../store/user/actions";
+import { Feed } from "../../common/Feed";
+import { UserDetail } from "../../components/UserDetail";
+import { GridView } from "../../components/GridView";
+import { Loader } from "../../common/Loader";
 
 export default function ProfilePage() {
     const [selectedTab, setSelectedTab] = useState(0);
-    const [postListView, setPostListView] = useState(null);
+    const [postListView, setPostListView] = useState<string | null>(null);
     const [isSticky, setIsSticky] = useState(false);
 
     const params = useParams();
-    const dispatch = useAppDispatch();
+    const thunkDispatch = useAppDispatch();
+    const dispatch = useDispatch();
     const { userDetails, userPhotos } = useAppSelector((state) => state.user.data);
 
-    function hydrateFeed(id: string) {
-        dispatch(getUserPhotos(id));
+    function hydrateFeed() {
+        if (params.username) thunkDispatch(getUserPhotos(params.username));
     }
 
-    // function changeTab(index) {
-    //     setSelectedTab(index);
-    // }
+    function changeTab(index: number) {
+        setSelectedTab(index);
+    }
 
-    // function viewPostInListView(item) {
-    //     setPostListView(item);
-    //     changeTab(1);
-    // }
-
-    
+    function viewPostInListView(item: string | null) {
+        setPostListView(item);
+        changeTab(1);
+    }
 
     useEffect(() => {
-        if (params.username) dispatch(getUserDetails(params.username));
-        if (params.username) hydrateFeed(params.username);
+        if (params.username) thunkDispatch(getUserDetails(params.username));
+        if (params.username) hydrateFeed();
         return () => {
-            dispatch({ type: "RESET_USER" });
+            dispatch(resetUser());
         };
     }, [dispatch, params.username]);
 
@@ -55,27 +55,27 @@ export default function ProfilePage() {
     }, []);
     return (
         <main className="pp19Wrapper">
-            {/* <UserDetails data={userDetails} /> */}
-            {/* <section className="pp19photosWrapper">
+            {userDetails && <UserDetail data={userDetails} />}
+            <section className="pp19photosWrapper">
                 <div className={`tb19tabsButton ${isSticky ? "sticky" : ""}`}>
-                    <button className={`tb19tabBtn ${selectedTab ? "" : "active-tab"}`} onClick={() => changeTab(0)}>
+                    <span className={`tb19tabBtn ${selectedTab ? "" : "active-tab"}`} onClick={() => changeTab(0)}>
                         All Photo's
-                    </button>
-                    <button className={`tb19tabBtn ${selectedTab ? "active-tab" : ""}`} onClick={() => changeTab(1)}>
+                    </span>
+                    <span className={`tb19tabBtn ${selectedTab ? "active-tab" : ""}`} onClick={() => changeTab(1)}>
                         Timeline
-                    </button>
+                    </span>
                 </div>
                 {selectedTab ? (
-                    <Feed data={user.photos} getMoreData={hydrateFeed} scrollToPost={postListView} />
+                    <Feed data={userPhotos} hydrateFeed={hydrateFeed} />
                 ) : (
                     <GridView
-                        data={user.photos}
-                        getMoreData={hydrateFeed}
+                        data={userPhotos}
+                        hydrateFeed={hydrateFeed}
                         viewPostInListView={viewPostInListView}
-                        hasMore={user.newData.length > 0 ? true : false}
+                        // hasMore={user.newData.length > 0 ? true : false}
                     />
                 )}
-            </section> */}
+            </section>
         </main>
     );
 }

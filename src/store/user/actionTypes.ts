@@ -10,14 +10,14 @@ export const GET_USER_PHOTOS_FAILURE = "userProfile/GET_USER_PHOTOS_FAILURE";
 
 export const RESET_USER = "userProfile/RESET_USER";
 
-interface GetUserDetailsRequestAction {
+type GetUserDetailsRequestAction = {
     type: typeof GET_USER_DETAILS_REQUEST;
     payload: {
         loading: boolean;
     };
-}
+};
 
-interface GetUserDetailsSuccessAction {
+type GetUserDetailsSuccessAction = {
     type: typeof GET_USER_DETAILS_SUCCESS;
     payload: {
         loading: boolean;
@@ -25,9 +25,9 @@ interface GetUserDetailsSuccessAction {
             userDetails: UserDetails;
         };
     };
-}
+};
 
-interface GetUserDetailsFailureAction {
+type GetUserDetailsFailureAction = {
     type: typeof GET_USER_DETAILS_FAILURE;
     payload: {
         loading: boolean;
@@ -35,14 +35,14 @@ interface GetUserDetailsFailureAction {
             message: string;
         };
     };
-}
-interface GetUserPhotosRequestAction {
+};
+type GetUserPhotosRequestAction = {
     type: typeof GET_USER_PHOTOS_REQUEST;
     payload: {
         loading: boolean;
     };
-}
-interface GetUserPhotosSuccessAction {
+};
+type GetUserPhotosSuccessAction = {
     type: typeof GET_USER_PHOTOS_SUCCESS;
     payload: {
         loading: boolean;
@@ -51,8 +51,8 @@ interface GetUserPhotosSuccessAction {
         };
         page: number;
     };
-}
-interface GetUserPhotosFailureAction {
+};
+type GetUserPhotosFailureAction = {
     type: typeof GET_USER_PHOTOS_FAILURE;
     payload: {
         loading: boolean;
@@ -60,8 +60,8 @@ interface GetUserPhotosFailureAction {
             message: string;
         };
     };
-}
-interface ResetUserAction {
+};
+type ResetUserAction = {
     type: typeof RESET_USER;
     payload: {
         loading: boolean;
@@ -70,7 +70,7 @@ interface ResetUserAction {
             userPhotos: [];
         };
     };
-}
+};
 
 export type UserActionTypes =
     | GetUserDetailsRequestAction

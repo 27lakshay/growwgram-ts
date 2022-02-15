@@ -4,14 +4,14 @@ export const GET_POSTS_REQUEST = "feed/GET_POSTS_REQUEST";
 export const GET_POSTS_SUCCESS = "feed/GET_POSTS_SUCCESS";
 export const GET_POSTS_FAILURE = "feed/GET_POSTS_FAILURE";
 
-interface GetFeedRequestAction {
+type GetFeedRequestAction = {
     type: typeof GET_POSTS_REQUEST;
     payload: {
         loading: boolean;
     };
-}
+};
 
-interface GetFeedSuccessAction {
+type GetFeedSuccessAction = {
     type: typeof GET_POSTS_SUCCESS;
     payload: {
         loading: boolean;
@@ -20,9 +20,9 @@ interface GetFeedSuccessAction {
         };
         page: number;
     };
-}
+};
 
-interface GetFeedFailureAction {
+type GetFeedFailureAction = {
     type: typeof GET_POSTS_FAILURE;
     payload: {
         loading: boolean;
@@ -30,6 +30,6 @@ interface GetFeedFailureAction {
             message: string;
         };
     };
-}
+};
 
 export type FeedActionTypes = GetFeedRequestAction | GetFeedSuccessAction | GetFeedFailureAction;

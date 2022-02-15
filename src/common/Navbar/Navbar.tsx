@@ -42,16 +42,16 @@ export default function Navbar() {
                 <button onClick={() => resetCache()}>GrowwGram</button>
             </span>
             <span className="nb19Options">
-                <button className="nb19Option">
-                    <i className="fas fa-inbox" />
+                <button title="Messages" className="nb19Option">
+                    <i className="fas fa-comment" />
                 </button>
-                <button className="nb19Option">
+                <button title="Notifications" className="nb19Option">
                     <i className="fas fa-bell" />
                 </button>
-                <button className="nb19Option" onClick={() => navigate("/windows")}>
+                <button title="Profile" className="nb19Option" onClick={() => navigate("/windows")}>
                     <i className="fas fa-user-circle" />
                 </button>
-                <button className="nb19Option" onClick={() => setIsDark((prev) => !prev)}>
+                <button title="Theme" className="nb19Option" onClick={() => setIsDark((prev) => !prev)}>
                     {isDark ? <i className="fas fa-moon"></i> : <i className="fas fa-sun"></i>}
                 </button>
                 {/* <button onClick={() => setTheme("brown")}>brown</button>

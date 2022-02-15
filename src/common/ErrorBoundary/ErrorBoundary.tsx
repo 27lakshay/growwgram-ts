@@ -1,30 +1,30 @@
-import React, { Component, ErrorInfo, ReactNode } from "react";
+import { Component, ErrorInfo, ReactNode } from "react";
 
 import "./errorBoundary.css";
 
-interface Props {
+type Props = {
     children: ReactNode;
-}
+};
 
-interface State {
+type State = {
     hasError: boolean;
-}
+};
 
-class ErrorBoundary extends Component<Props, State> {
-    public state: State = {
+export default class ErrorBoundary extends Component<Props, State> {
+    state: State = {
         hasError: false,
     };
 
-    public static getDerivedStateFromError(_: Error): State {
+    static getDerivedStateFromError(_: Error): State {
         // Update state so the next render will show the fallback UI.
         return { hasError: true };
     }
 
-    public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    componentDidCatch(error: Error, errorInfo: ErrorInfo) {
         console.error("Uncaught error:", error, errorInfo);
     }
 
-    public render() {
+    render() {
         if (this.state.hasError) {
             return (
                 <main>
@@ -35,5 +35,3 @@ class ErrorBoundary extends Component<Props, State> {
         return this.props.children;
     }
 }
-
-export default ErrorBoundary;

@@ -1,6 +1,9 @@
 import "./loader.css";
 
-export default function Loader({ type }) {
+type Props = {
+    type: string;
+};
+export default function Loader({ type }: Props) {
     if (type === "post") {
         return (
             <div className="ld19Post card br">

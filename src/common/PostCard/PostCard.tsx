@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Post } from "../../store/types";
 import "./post.css";
 
-export default function Post(props) {
+type Props = {
+    data: Post;
+    index: number;
+};
+
+export default function PostCard(props: Props) {
     const { id, user, urls, description, likes } = props.data;
     const [postLikeStatus, setPostLikeStatus] = useState({ count: likes, liked: false });
 
@@ -19,21 +25,25 @@ export default function Post(props) {
         <div id={id} className="p19Wrapper">
             <div className="p19Head">
                 <Link to={`/${user.username}`}>{user.username}</Link>
-                <i className="fas fa-ellipsis-h" />
+                <i title="Options" className="fas fa-ellipsis-h" />
             </div>
             <div className="p19Body">
                 <img className="p19Picture" src={urls.small} />
             </div>
             <div className="p19Footer">
                 <div className="p19Options">
-                    <button className={`p19Option ${postLikeStatus.liked ? "liked" : ""}`} onClick={() => handleLike()}>
+                    <button
+                        title="Like"
+                        className={`p19Option ${postLikeStatus.liked ? "liked" : ""}`}
+                        onClick={() => handleLike()}
+                    >
                         {postLikeStatus.liked ? <i className="fas fa-heart" /> : <i className="far fa-heart" />}
                         <span>{postLikeStatus.count} likes</span>
                     </button>
-                    <button className="p19Option">
+                    <button title="Share" className="p19Option">
                         <i className="fas fa-share" />
                     </button>
-                    <button className="p19Option">
+                    <button title="Save" className="p19Option">
                         <i className="fas fa-save" />
                     </button>
                 </div>

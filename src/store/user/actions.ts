@@ -8,6 +8,7 @@ import {
     GET_USER_PHOTOS_SUCCESS,
     GET_USER_PHOTOS_FAILURE,
     UserActionTypes,
+    RESET_USER,
 } from "./actionTypes";
 import { fetchUserDetails, fetchUserPhotos } from "../../utils/api";
 import { Post, UserDetails } from "../types";
@@ -42,7 +43,7 @@ export const getUserPhotos =
         try {
             dispatch({ type: GET_USER_PHOTOS_REQUEST, payload: { loading: true } });
             let store = getState();
-            let pageOffset = store.feed.page;
+            let pageOffset = store.user.page;
             const response: Post[] = await fetchUserPhotos(username, pageOffset);
             dispatch({
                 type: GET_USER_PHOTOS_SUCCESS,
@@ -61,3 +62,20 @@ export const getUserPhotos =
             console.log(e);
         }
     };
+
+export const resetUser = () => {
+    return {
+        type: RESET_USER,
+        payload: {
+            data: {
+                userDetails: null,
+                userPhotos: [],
+            },
+            loading: false,
+            page: 1,
+            error: {
+                message: "",
+            },
+        },
+    };
+};
