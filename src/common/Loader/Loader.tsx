@@ -37,7 +37,7 @@ export default function Loader({ type }: Props) {
     if (type === "image") {
         return (
             <div className="ld19Image">
-                <div className="skeleton-image"></div>
+                <div className="animate skeleton-image image din"></div>
             </div>
         );
     }

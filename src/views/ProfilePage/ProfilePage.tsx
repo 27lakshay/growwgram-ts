@@ -13,7 +13,6 @@ import { Loader } from "../../common/Loader";
 export default function ProfilePage() {
     const [selectedTab, setSelectedTab] = useState(0);
     const [postListView, setPostListView] = useState<string | null>(null);
-    const [isSticky, setIsSticky] = useState(false);
 
     const params = useParams();
     const thunkDispatch = useAppDispatch();
@@ -41,23 +40,11 @@ export default function ProfilePage() {
         };
     }, [dispatch, params.username]);
 
-    const handleTabsVisibility = () => {
-        if (window.scrollY >= 400) {
-            setIsSticky(true);
-        } else {
-            setIsSticky(false);
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener("scroll", handleTabsVisibility);
-        return () => window.removeEventListener("scroll", handleTabsVisibility);
-    }, []);
     return (
         <main className="pp19Wrapper">
-            {userDetails && userDetails ? <UserDetail data={userDetails} /> : <Loader type="userDetails" />}
+            {userDetails && userDetails.username ? <UserDetail data={userDetails} /> : <Loader type="userDetails" />}
             <section className="pp19photosWrapper">
-                <div className={`tb19tabsButton ${isSticky ? "sticky" : ""}`}>
+                <div className="tb19tabsButton">
                     <span className={`tb19tabBtn ${selectedTab ? "" : "active-tab"}`} onClick={() => changeTab(0)}>
                         All Photo's
                     </span>

@@ -1,7 +1,7 @@
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import "./gridView.css";
-import Loader from "../../common/Loader/Loader";
+import { Loader } from "../../common/Loader";
 import { Post } from "../../store/types";
 
 type Props = {
@@ -13,16 +13,16 @@ export default function GridView(props: Props) {
     const { data, hydrateFeed, viewPostInListView } = props;
 
     return (
-        <div>
+        <>
             {data.length > 0 ? (
                 <InfiniteScroll
                     dataLength={data.length}
                     next={hydrateFeed}
                     hasMore={true}
                     loader={<h4>Loading...</h4>}
-                    scrollThreshold={1}
+                    scrollThreshold={0.8}
                     className={"gv19gridView"}
-                    style={{ margin: 0 }}
+                    style={{ margin: "auto" }}
                 >
                     {data.map((item) => (
                         <div key={item.id} className={`gv19postWrapper`} onClick={() => viewPostInListView(item.id)}>
@@ -32,11 +32,11 @@ export default function GridView(props: Props) {
                 </InfiniteScroll>
             ) : (
                 <div className="gv19Wrapper gv19gridView">
-                    {Array.from(Array(10)).map((_, i) => (
+                    {Array.from(Array(8)).map((_, i) => (
                         <Loader key={i} type={"image"} />
                     ))}
                 </div>
             )}
-        </div>
+        </>
     );
 }

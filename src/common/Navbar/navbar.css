@@ -7,11 +7,8 @@
     background-color: var(--gg-primary-light);
     transition: all 0.3s ease-in-out;
     position: fixed;
+    z-index: 100;
 }
-
-/* .nb19Wrapper.sticky {
-    position: fixed;
-} */
 
 .nb19Brand button {
     outline: none;
@@ -53,6 +50,4 @@
     .nb19Option:nth-child(2) {
         display: none;
     }
-    
 }
-

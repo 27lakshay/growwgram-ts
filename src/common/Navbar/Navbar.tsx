@@ -39,7 +39,7 @@ export default function Navbar() {
     return (
         <nav className="nb19Wrapper">
             <span className="nb19Brand">
-                <button onClick={() => resetCache()}>GrowwGram</button>
+                <button title="Clear Feed Cache" onClick={() => resetCache()}>GrowwGram</button>
             </span>
             <span className="nb19Options">
                 <button title="Messages" className="nb19Option">
@@ -54,10 +54,6 @@ export default function Navbar() {
                 <button title="Theme" className="nb19Option" onClick={() => setIsDark((prev) => !prev)}>
                     {isDark ? <i className="fas fa-moon"></i> : <i className="fas fa-sun"></i>}
                 </button>
-                {/* <button onClick={() => setTheme("brown")}>brown</button>
-                <button onClick={() => setTheme("blue")}>blue</button>
-                <button onClick={() => setTheme("yellow")}>yellow</button>
-                <button onClick={() => setTheme("green")}>green</button> */}
             </span>
         </nav>
     );

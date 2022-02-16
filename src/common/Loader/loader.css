@@ -98,8 +98,8 @@
     gap: 2rem;
 }
 
-.ld19Image {
-    
+.ld19Image .skeleton-image {
+    height: 100% !important;
 }
 
 @media (max-width: 640px) {

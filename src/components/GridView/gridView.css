@@ -3,15 +3,13 @@
     padding: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(50px, auto);
+    grid-auto-rows: 300px;
 }
 .gv19gridView {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(50px, auto);
-    margin: 1.5rem !important;
-    /* width: 80vw; */
+    grid-template-columns: 1fr;
+    gap: 2rem;
 }
 
 .gv19Post {
@@ -24,7 +22,7 @@
 @media (min-width: 640px) {
     .gv19gridView {
         grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: minmax(50px, auto);
+        grid-auto-rows: 300px;
     }
 }
 
@@ -33,6 +31,6 @@
         width: 80vw;
         padding: 0;
         grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: minmax(50px, auto);
+        grid-auto-rows: 400px;
     }
 }
