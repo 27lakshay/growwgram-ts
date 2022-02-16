@@ -1,9 +1,126 @@
 .ld19Post {
     background-color: var(--gg-primary-light);
     border-radius: var(--gg-border-radius);
+    width: 600px;
+    height: 700px;
+    display: grid;
+    grid-template-rows: 8% 80% 12%;
+}
+.ld19PostHead,
+.ld19PostBody,
+.ld19PostFooter {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ld19PostHead,
+.ld19PostFooter {
     padding: 1rem;
-    width: 500px;
-    height: 600px;
+}
+
+.ld19PostFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.ld19PostHead {
+    gap: 1rem;
+}
+.skeleton-profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.skeleton-title {
+    width: 120px;
+    height: 6px;
+    border-radius: var(--gg-border-radius);
+}
+.skeleton-caption {
+    width: 100%;
+    height: 6px;
+    border-radius: var(--gg-border-radius);
+}
+
+.short {
+    width: 70%;
+}
+
+.ld19suggestedUser {
+    display: flex;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 90px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ld19suggestedUser .skeleton-profile-image {
+    width: 64px;
+    height: 64px;
+}
+
+.right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    gap: 1rem;
+}
+
+.ld19userDetails {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    min-height: 220px;
+}
+
+.ld19userDetails .skeleton-profile-image {
+    width: 128px;
+    height: 128px;
+}
+
+.ld19userDetails .skeleton-title {
+    width: 100px;
+}
+.ld19userDetails .skeleton-text {
+    width: 100%;
+    height: 6px;
+}
+.ld19userDetails .stats {
+    width: 50%;
+    display: flex;
+    gap: 2rem;
+}
+
+.ld19Image {
+    
+}
+
+@media (max-width: 640px) {
+    .ld19Post {
+        width: 100%;
+        border-radius: 0;
+        width: 100%;
+        height: 500px;
+    }
+    .skeleton-profile-image {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+    .ld19PostHead,
+    .ld19PostFooter {
+        padding: 0.5rem;
+    }
+    .ld19userDetails {
+        flex-direction: column;
+    }
 }
 
 .ld19Post .image {
@@ -41,7 +158,6 @@
     width: 100%;
 }
 .card {
-    margin: 1rem;
     /* cursor: auto; */
 }
 .wrapper {
@@ -69,7 +185,7 @@
 
 .animate {
     animation: shimmer 2s infinite linear;
-    background: linear-gradient(to right, var(--gg-off-white) 4%, var(--gg-grey-light) 25%, var(--gg-off-white) 36%);
+    background: linear-gradient(to right, #dbdbdb 4%, #a9a9a9 25%, #dbdbdb 36%);
     background-size: 1000px 100%;
 }
 

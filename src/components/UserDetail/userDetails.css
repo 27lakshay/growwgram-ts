@@ -1,11 +1,12 @@
 .pp19userDetailsWrapper {
     display: grid;
     background-color: var(--gg-primary-light);
-    margin-top: 2rem;
     border-radius: var(--gg-border-radius);
     grid-template-columns: 20% 80%;
     padding: 1rem;
     width: 80vw;
+    min-height: 220px;
+    align-items: center;
 }
 
 .pp19userImageWrapper {
@@ -26,7 +27,6 @@
 
 .pp19userFullName {
     font-size: 1.5rem;
-    /* margin-bottom: 0.5rem; */
 }
 
 .pp19Username {

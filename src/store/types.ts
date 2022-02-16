@@ -7,6 +7,7 @@ export interface FeedState {
     error?: {
         message: string;
     };
+    newData: Post[];
 }
 
 export interface UserProfileState {
@@ -19,6 +20,7 @@ export interface UserProfileState {
     error?: {
         message: string;
     };
+    // newData: [];
 }
 
 export interface Post {

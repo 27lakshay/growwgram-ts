@@ -12,18 +12,17 @@ export const getPosts = (): AppThunk => async (dispatch: Dispatch<FeedActionType
         const response: Post[] = await fetchRandomPhotos(pageOffset);
         dispatch({
             type: GET_POSTS_SUCCESS,
-            payload: { loading: false, data: { posts: response }, page: pageOffset + 1 },
+            payload: { loading: false, data: { posts: response }, page: pageOffset + 1, newData: response },
         });
     } catch (e) {
         dispatch({
             type: GET_POSTS_FAILURE,
             payload: {
-                loading: false,
+                loading: true,
                 error: {
                     message: "Something went wrong",
                 },
             },
         });
-        console.log(e);
     }
 };

@@ -5,7 +5,14 @@
     width: 100%;
     height: 60px;
     background-color: var(--gg-primary-light);
+    transition: all 0.3s ease-in-out;
+    position: fixed;
 }
+
+/* .nb19Wrapper.sticky {
+    position: fixed;
+} */
+
 .nb19Brand button {
     outline: none;
     border: none;

@@ -19,6 +19,7 @@ type GetFeedSuccessAction = {
             posts: Post[];
         };
         page: number;
+        newData: Post[];
     };
 };
 

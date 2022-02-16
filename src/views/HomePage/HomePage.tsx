@@ -8,7 +8,7 @@ import { getPosts } from "../../store/posts/actions";
 
 export default function HomePage() {
     const dispatch = useAppDispatch();
-    const { data, loading } = useAppSelector((state) => state.feed);
+    const { data, loading, newData } = useAppSelector((state) => state.feed);
 
     function hydrateFeed() {
         dispatch(getPosts());
@@ -20,7 +20,7 @@ export default function HomePage() {
 
     return (
         <main className="hp19Wrapper">
-            <Feed data={data.posts} hydrateFeed={hydrateFeed} />
+            <Feed data={data.posts} hydrateFeed={hydrateFeed} loading={newData.length > 0 ? true : false} />
             <SuggestedUsers data={data.posts} />
         </main>
     );

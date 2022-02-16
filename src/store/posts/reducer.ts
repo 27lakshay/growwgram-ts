@@ -11,6 +11,7 @@ const initialState: FeedState = {
     error: {
         message: "",
     },
+    newData: [],
 };
 
 export const postsReducer: Reducer<FeedState, FeedActionTypes> = (state = initialState, action) => {
@@ -23,6 +24,7 @@ export const postsReducer: Reducer<FeedState, FeedActionTypes> = (state = initia
                 data: { posts: [...state.data.posts, ...action.payload.data.posts] },
                 loading: action.payload.loading,
                 page: action.payload.page,
+                newData: action.payload.newData,
             };
         case GET_POSTS_FAILURE:
             return {

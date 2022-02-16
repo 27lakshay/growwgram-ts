@@ -10,12 +10,12 @@ body {
     --gg-grey-dark: #3a404e;
     --gg-grey-darkest: #404042;
 
-    --gg-primary: #0B132B;
-    --gg-primary-light: #1C2541;
-    --gg-primary-lightest: #3A506B;
+    --gg-primary: #0b132b;
+    --gg-primary-light: #1c2541;
+    --gg-primary-lightest: #3a506b;
     --gg-border-radius: 8px;
-    --gg-button-hover: #3A506B;
-    --gg-text: #E8EDDF;
+    --gg-button-hover: #3a506b;
+    --gg-text: #e8eddf;
     --gg-text-hover: #fff;
 }
 * {
@@ -32,4 +32,14 @@ body {
 a:hover,
 i:hover {
     color: var(--gg-text-hover);
+}
+
+main {
+    padding-top: calc(60px + 3rem);
+    padding-bottom: 3rem;
+    min-height: 100vh;
+}
+
+.infinite-scroll-component__outerdiv {
+    width: 100%;
 }

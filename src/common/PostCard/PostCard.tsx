@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Post } from "../../store/types";
-import "./post.css";
+import "./postCard.css";
 
 type Props = {
     data: Post;
@@ -23,8 +23,10 @@ export default function PostCard(props: Props) {
 
     return (
         <div id={id} className="p19Wrapper">
-            <div className="p19Head">
-                <Link to={`/${user.username}`}>{user.username}</Link>
+            <div className="p19Head skeleton">
+                <Link className="skeleton-text" to={`/${user.username}`}>
+                    {user.username}
+                </Link>
                 <i title="Options" className="fas fa-ellipsis-h" />
             </div>
             <div className="p19Body">

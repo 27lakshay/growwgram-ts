@@ -3,15 +3,16 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 import "./feed.css";
 import { PostCard } from "../PostCard";
-import Loader from "../Loader/Loader";
+import { Loader } from "../../common/Loader";
 import { Post } from "../../store/types";
 
 type Props = {
     data: Post[];
     hydrateFeed: any;
+    loading?: boolean;
 };
 export default function Feed(props: Props) {
-    const { data, hydrateFeed } = props;
+    const { data, hydrateFeed, loading } = props;
 
     useEffect(() => {
         // if (scrollToPost) {
@@ -26,9 +27,6 @@ export default function Feed(props: Props) {
 
     return (
         <div className="f19Wrapper">
-            {/* {loading ? (
-                Array.from(Array(5)).map((_, i) => <Loader key={i} type={"post"} />)
-            ) : ( */}
             <InfiniteScroll
                 dataLength={data.length}
                 next={hydrateFeed}
@@ -41,7 +39,6 @@ export default function Feed(props: Props) {
                     <PostCard index={index} data={item} />
                 ))}
             </InfiniteScroll>
-            {/* )} */}
         </div>
     );
 }

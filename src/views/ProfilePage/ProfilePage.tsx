@@ -55,7 +55,7 @@ export default function ProfilePage() {
     }, []);
     return (
         <main className="pp19Wrapper">
-            {userDetails && <UserDetail data={userDetails} />}
+            {userDetails && userDetails ? <UserDetail data={userDetails} /> : <Loader type="userDetails" />}
             <section className="pp19photosWrapper">
                 <div className={`tb19tabsButton ${isSticky ? "sticky" : ""}`}>
                     <span className={`tb19tabBtn ${selectedTab ? "" : "active-tab"}`} onClick={() => changeTab(0)}>
