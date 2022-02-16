@@ -33,7 +33,9 @@ export default function Navbar() {
         document.documentElement.style.setProperty("--gg-primary-light", "#F28482");
         document.documentElement.style.setProperty("--gg-off-white", "#dbdbdb");
         document.documentElement.style.setProperty("--gg-grey-light", "#dbdbdb");
-        document.documentElement.style.setProperty("--gg-button-hover", "#F6DCD3");
+        document.documentElement.style.setProperty("--gg-button-hover", "#3a3a3a");
+        document.documentElement.style.setProperty("--gg-text", "#000");
+        document.documentElement.style.setProperty("--gg-text-hover", "#3a3a3a");
     }, [isDark]);
 
     return (

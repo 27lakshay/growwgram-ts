@@ -30,7 +30,7 @@
 }
 
 .pp19Username {
-    color: var(--gg-grey-light);
+    color: var(--gg-text-hover);
 }
 .pp19Bio {
     margin: 1rem 0;

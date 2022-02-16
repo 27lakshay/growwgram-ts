@@ -34,13 +34,13 @@
 }
 
 .su19Name {
-    color: var(--gg-off-white);
+    color: var(--gg-text);
     font-size: 1rem;
     margin-bottom: 0.3rem;
 }
 
 .su19userName {
-    color: var(--gg-grey-light);
+    color: var(--gg-text-hover);
     font-size: 0.8rem;
 }
 

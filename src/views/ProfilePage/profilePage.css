@@ -47,10 +47,10 @@
 }
 
 .tb19tabBtn.active-tab::after {
-    content: "";
+    /* content: ""; */
     height: 10px;
     width: 10px;
-    background-color: var(--gg-primary-lightest);
+    background-color: var(--gg-primary-light);
     border-radius: 50%;
     position: absolute;
     bottom: -14px;
